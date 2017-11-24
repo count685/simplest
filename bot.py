@@ -9,10 +9,8 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     )
 
 def start_bot(bot, update):
-    print(update)
-    mytext = """Привет {}!
-Я простой бот и понимаю только команду /start
-    """.format(update.message.chat.first_name)
+    mytext = "Привет {}! Я простой бот и понимаю только команду /start".format(update.message.chat.first_name)
+    logging.info('Полльзователь {} нажал /start'.format(update.message.chat.username))
     update.message.reply_text(mytext)
 
 def chat(bot, update):
